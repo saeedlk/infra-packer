@@ -21,7 +21,7 @@ data "hcp-packer-image" "ubuntu-ap" {
 
 
 source "amazon-ebs" "application-ap" {
-  ami_name = "packer_AWS_{{timestamp}}"
+  ami_name = "packer_AWS_{{timestamp}}_v${var.version}"
 
   region         = "ap-southeast-1"
   source_ami     = data.hcp-packer-image.ubuntu-ap.id
